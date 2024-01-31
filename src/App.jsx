@@ -9,6 +9,7 @@ import Explore from './pages/explore/Explore'
 import PageNotFound from './pages/404/PageNotFound'
 import { fetchDataFromApi } from './utils/api'
 import { getApiConfiguration } from './store/homeSlice'
+import Header from './components/header/Header'
 
 function App() {
 
@@ -32,15 +33,16 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/:mediaType/:id' element={<MovieDetail/>}/>
-        <Route path='/search/:query' element={<SearchResult/>}/>
-        <Route path='/explore/:mediaType' element={<Explore/>}/>
-        <Route path='*' element={<PageNotFound/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/:mediaType/:id' element={<MovieDetail/>}/>
+          <Route path='/search/:query' element={<SearchResult/>}/>
+          <Route path='/explore/:mediaType' element={<Explore/>}/>
+          <Route path='*' element={<PageNotFound/>}/>
+        </Routes>
+      </BrowserRouter>
   )
 }
 

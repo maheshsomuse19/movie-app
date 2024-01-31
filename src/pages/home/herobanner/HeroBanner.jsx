@@ -17,7 +17,6 @@ const HeroBanner = () => {
     const backgroundImageUrl = url?.backdrop + data?.results[Math.floor(Math.random() * 20)]?.backdrop_path
     setBackground(backgroundImageUrl)
   },[])
-  console.log("====================background",background)
 
   const searchQueryHandler = (event) => {
     console.log("===============aa",event)
